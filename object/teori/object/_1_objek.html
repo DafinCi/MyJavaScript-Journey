@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // apa itu objek
+
+      //basicnya gini
+      //   const exampleObject = {
+      //     propertyName: value
+      //   };
+
+      // contohnya gini
+
+      const person = {
+        name: "Alice",
+        age: 30,
+        city: "New York",
+      };
+
+      // CARA MENGAKSES PROPERTI PADA OBJEK
+      // kita pake namanya dot notation: objectName.propertyName
+
+      console.log(person.name); // Alice
+      console.log(person.age); // 30
+
+      // bisa juga pake kurung siku,
+      console.log(person["name"]); // Alice
+      console.log(person["age"]); //  30
+
+      // pake bracket lebih fleksibel, soalnya kita bisa pake properti yang aturanya tidak sesuai aturan js
+
+      const oddObject = {
+        "1stProperty": "Hello",
+        "property with spaces": "World",
+      };
+
+      console.log(oddObject["1stProperty"]); // Hello
+      console.log(oddObject["property with spaces"]); // World
+
+      // pake kurung siku kita bisa pake variabel buat mengakses properti secara dinamis
+
+      const person2 = {
+        name: "Alice",
+        age: 30,
+        city: "Wonderland",
+      };
+
+      let propertyName = "city"; // akses properti "city"
+      console.log(person2[propertyName]); // Wonderland
+    </script>
+  </body>
+</html>

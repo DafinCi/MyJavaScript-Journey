@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How Do the parseFloat() and parseInt() Methods Work? --- FREECODECAMP
+    </title>
+  </head>
+  <body>
+    <script>
+      // parseFloat(): mengubah string jadi float
+      // parseInt(): mengubah string jadi int
+      console.log(parseFloat("3.14")); // 3.14
+      console.log(parseFloat("3.14 abc")); // 3.14
+      console.log(parseFloat("3.14.5")); // 3.14 // hanya mengambil titik pertama
+      console.log(parseFloat("abc 3.14")); // NaN
+
+      console.log(parseInt("42")); // 42
+      console.log(parseInt("42px")); // 42
+      console.log(parseInt("3.14")); // 3 // bakal dibulatkan kebawah
+      console.log(parseInt("abc123")); // NaN
+
+      //bisa kontrol plus minus juga
+
+      console.log(parseFloat("+3.14")); // 3.14
+      console.log(parseInt("-42")); // -42
+    </script>
+  </body>
+</html>

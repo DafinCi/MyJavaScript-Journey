@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRING FORMATTING METHODS --- FREECODECAMP</title>
+  </head>
+  <body>
+    <script>
+      // toUpperCase()
+      let nama = "Dapin el";
+      let besar = nama.toUpperCase();
+      console.log(besar); // DAPIN EL
+
+      // toLowerCase()
+      let nama2 = "IPIN el";
+      let kecil = nama2.toLowerCase();
+      console.log(kecil); // ipin el
+
+      // How Can You Trim Whitespace from a String?
+      // whitespace tuh mengacu pada tabs, spasi, linebreak, yang ada di string tapi karakternya tidak terlihat
+      let greeting = "   hello, world  ";
+      // ada spasi sebelum dan sesudah karakter yang visible
+
+      // trim(): untuk menghilangkan whitespace sebelum dan sesudah karakter yang visible
+      console.log(greeting.trim()); // hello, world
+
+      // trimStart(): depannya aja
+      // trimEnd(): belakangnya aja
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BELAJAR ARROW FUNCTION JS</title>
+  </head>
+  <body>
+    <script>
+      // ada cara lain dalam menuliskan function di js, yaitu menggunakan arrow function
+
+      const greetings = (name) => {
+        console.log(`hello ${name}`);
+      };
+      // disini kita variable const namanya 'grettings' menandakan klo ini tuh fungsi anonymous, tapi bedanya kita gapake syntax "function" kita pake "=>" setelah parameter
+
+      // klo parameter nya cuma satu gausah pake tanda kurung
+      const greetings2 = (name2) => {
+        console.log(`hello2 ${name2}`);
+      };
+
+      // klo gada parameter bisa nulis tanda kurungnya aja
+      const greetings3 = () => {
+        consolo.log("halo semuanya, ini arrow function tanpa parameter");
+      };
+
+      // klo isi functionnya cuma satu sebenernya bisa ditulis tanpa kurungkurawal
+      const greetings4 = (name4) => console.log(`hello ${name4}`);
+      // gaya penulisan gini hanya berlaku kalau cuma ingin nulis arrow function simple
+
+      // KLO PAKE RETURN STATEMENT, GINI CONTOHNYA
+      // klo pake return gabisa ditulis dalam satu baris doang kayak diatas
+
+      const calculateArea = (width, height) => {
+        const area = width * height;
+        return area;
+      };
+      // fungsi ini akan mengembalikan nilai variable 'area'
+
+      const calculateArea2 = (width2, height2) => {
+        return width2 * height2;
+      };
+      // fungsi akan mengembalikan nilai hasil width2 dikali height2
+    </script>
+  </body>
+</html>

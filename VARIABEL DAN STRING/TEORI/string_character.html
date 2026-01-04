@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What Is ASCII, and How Does It Work with charCodeAt() and fromCharCode()?
+    </title>
+  </head>
+  <body>
+    <script>
+      /*
+        dalam pemrograman, memahami bagaimana karakter di presentasikan sebagai angka adalah basic fundamental. disinilah ASCII(Standard Code for Information Interchange) hadir, ini adalah sebuah standar pengkodean karakter yang di gunakan computer untuk menampilkan text. ini berisi value numeric pada setiap karakter, yang biasa dikenal dengan machines
+
+        contoh: huruf A jika dipresentasikan dalam angka adalah 65
+
+        The ASCII standard covers 128 characters including:
+
+Uppercase and lowercase English letters (A-Z, a-z).
+Numbers (0-9).
+Common punctuation marks and symbols (!, @, #, and so on).
+Control characters (such as newline and tab).
+
+        di js kita bisa dengan mudah mengakses ascii dengan charCodeAt()
+        */
+
+      let letter = "A";
+      console.log(letter.charCodeAt()); //65
+
+      letter = "a";
+      console.log(letter.charCodeAt()); // 97
+
+      let symbol = "!";
+      console.log(symbol.charCodeAt(0)); // 33
+
+      // klo charCodeAt() tuh ngambil value ascii dari karakter, sedangkan fromCharCode() adalah kebalikannya, dia dari angka ke karakter
+
+      let char = String.fromCharCode(90);
+      console.log(char); // z
+
+      console.log(String.fromCharCode(66)); // B
+
+      // kedua method ini berguna ketika kita ingin memanipulasi atau membandingkan ascii value
+
+      //       For instance, you might use charCodeAt() to check if a character is uppercase, lowercase, or a digit by comparing its ASCII value.
+
+      // On the other hand, fromCharCode() can be used to dynamically generate characters from their ASCII codes.
+    </script>
+  </body>
+</html>

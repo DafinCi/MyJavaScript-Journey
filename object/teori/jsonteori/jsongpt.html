@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // json = javascript object notation
+      // ini format untuk nyimpan dan ngirim data, dipakai di web3, api, database dan hampir semua sudut internet
+
+      // FORMATNYA:
+      // key harus pake tanda kutip
+      // value bisa string, number, boolean, null, array, object
+      // tidak boleh trailing comma
+
+      // contoh json yang valid
+      // lihat di file contoh.json
+
+      //APA BEDANYA JSON DENGAN OBJECT JS?
+
+      // json itu data format, klo objek tuh struktur data di js
+
+      // contoh object
+      const user = {
+        nama: "dapin",
+        umur: 19,
+      };
+      // key objek ga harus pakai tanda kutip
+
+      //contoh json lihat di file contoh.json
+
+      // apakah mirip? iya
+      // apakah sama? tidak
+      // json hanya teks, object adalah data aktif
+
+      // CONVERT JSON <-> OBJECT (ini inti belajar json)
+
+      // json ke object
+      //  pakai JSON.parse
+
+      const json = '{"nama": "dapin", "umur": 19}';
+      const obj = JSON.parse(json);
+
+      console.log(obj.nama); // "dapin"
+
+      // object ke json
+      // pake JSON.stringify()
+      // mengubah object jadi teks
+
+      const data = { nama: "ipin", umur: 19 };
+      const json2 = JSON.stringify(data);
+
+      console.log(json2); // {"nama":"ipin","umur":19}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // satu dimensi
+      let fruits = ["apple", "banana", "cherry", "date"];
+      console.log(fruits[2]); // "cherry"
+
+      // dua dimensi
+      // baris dan kolomnya lebih dari satu
+      // klo mau akses di dua dimensi kita butuh 2 indikasi, satu untuk baris, satu untuk kolom
+      let chessboard = [
+        ["R", "N", "B", "Q", "K", "B", "N", "R"],
+        ["P", "P", "P", "P", "P", "P", "P", "P"],
+        [" ", " ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " ", " "],
+        ["p", "p", "p", "p", "p", "p", "p", "p"],
+        ["r", "n", "b", "q", "k", "b", "n", "r"],
+      ];
+
+      console.log(chessboard[0][3]); // "Q"
+    </script>
+  </body>
+</html>

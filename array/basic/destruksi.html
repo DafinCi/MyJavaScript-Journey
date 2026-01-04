@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // biar kodenya lebih clean dan readable pake teknik array destructing
+      let fruits = ["apple", "banana", "orange"];
+
+      let [first, second, third] = fruits;
+
+      console.log(first); // "apple"
+      console.log(second); // "banana"
+      console.log(third); // "orange"
+
+      // daripada nulis gini:
+      /*
+      const fruits = ["apple", "banana", "orange"];
+
+const first = fruits[0];
+const second = fruits[1];
+const third = fruits[2];
+
+console.log(first); // "apple"
+console.log(second); // "banana"
+console.log(third); // "orange"
+
+lebih ribet
+      */
+
+      // kita juga bisa skip elemen pake koma
+      let colors = ["red", "green", "blue", "yellow"];
+      let [firstColor, , thirdColor] = colors;
+
+      console.log(firstColor); // "red"
+      console.log(thirdColor); // "blue
+
+      //   // fitur keren array destructing lain: bisa pake nilai default
+      //   // klo arraynya kurang elemen dari variable yang kita inginkan, kita bisa nulis gini
+      let numbers = [1, 2];
+      let [a, b, c = 3] = numbers;
+
+      console.log(a); // 1
+      console.log(b); // 2
+      console.log(c); // 3
+
+      // ada juga sintaks '...' titik tiga: untuk mengambil sisa elemen yang ada di array tsb (array yang ga di akses pake array destructing)
+
+      let fruits2 = ["apple", "banana", "orange", "mango", "kiwi"];
+      let [first2, second2, ...sisa] = fruits2;
+
+      console.log(first2); // "apple"
+      console.log(second2); // "banana"
+      console.log(sisa); // ["orange", "mango", "kiwi"]
+    </script>
+  </body>
+</html>

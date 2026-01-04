@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      console.log(null == undefined); // true
+      console.log(null === undefined); // false
+
+      console.log(null == 0); // false
+      console.log(null == ""); // false
+      console.log(undefined == 0); // false
+      console.log(undefined == ""); // false
+
+      // klo membandingkan null dengan angka agak tricky
+      console.log(null > 0); // false
+      console.log(null == 0); // false
+      console.log(null >= 0); // true
+
+      // tapi klo undefined, mau gimanapun caranya dia akan return false, karna dia akan selalu di konvert ke nan
+
+      if (1) {
+        console.log("True!");
+      }
+      
+    </script>
+  </body>
+</html>

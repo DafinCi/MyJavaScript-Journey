@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // caranya mirip kayak akses div di css
+
+      const person = {
+        name: "Alice",
+        age: 30,
+        contact: {
+          email: "alice@example.com",
+          phone: {
+            home: "123-456-7890",
+            work: "098-765-4321",
+          },
+        },
+      };
+
+      console.log(person.contact.phone.work); // "098-765-4321"
+
+      // bisa juga dengan menggunakan bracket
+      console.log(person["contact"]["phone"]["work"]); // "098-765-4321"
+
+      // sekarang perhatikan bagaimana mengakses data ketika satu objek memiliki properti yang isinya berupa array
+
+      const person2 = {
+        name: "Alice",
+        age: 30,
+        addresses: [
+          { type: "home", street: "123 Main St", city: "Anytown" }, // ini index 0
+          { type: "work", street: "456 Market St", city: "Workville" }, // ini index 1
+        ],
+      };
+
+      console.log(person2.addresses[1].city); // "Workville"
+    </script>
+  </body>
+</html>

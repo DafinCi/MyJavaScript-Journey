@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What Are Bitwise Operators, and How Do They Work? --- FREECODECAMP
+    </title>
+  </head>
+  <body>
+    <script>
+      // bitwise operator
+      // AND (&), OR (|), XOR (^), NOT (~), left shift (<<), and right shift (>>).
+
+      // and (&) mengembalikan nilai 1 jika setiap posisi angka satu sesuai dan sama di kedua biner
+
+      let a = 5; // Binary: 101
+      let b = 3; // Binary: 011
+      console.log(a & b); // 1 (Binary: 001) // hanya yang belakang yang sama
+
+      // or (|) mengembalikan nilai 1 jika setiap posisi ada angka 1, baik di satu biner doang atau keduanya
+
+      console.log(a | b); // 7 (binary: 111)
+
+      // xor (^) mengembalikan nilai 1 jika salah satu biner angkanya 1 bukan keduanya
+
+      console.log(a ^ b); // 6 (110) // klo keduanya sama sama 1 maka 0
+
+      // not (~) membalikan semua operan, yang tadinya positif jadi negatif, yang negatiff jadi positif
+      console.log(~a); // -6
+
+      // shift left (<<) pembulatan keatas
+
+      console.log(a << 1); // 10 (binary: 1010)
+
+      // shift right (>>) pembulatan ke bawah
+
+      console.log(a >> 1); // 2 (binary: 10)
+
+      // bitwise biasa dipakai di low level programming dan kriptografi
+
+      let x = 8; // Binary: 1000
+      console.log(x << 2);
+    </script>
+  </body>
+</html>

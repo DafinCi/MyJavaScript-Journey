@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // shallow copy array adalah array baru yang isinya sama dengan array orinya, klo isinya cuma value primitif kayak string dan angka, maka isi arraynya akan benar benar sama. tapi klo isinya array lain lagi maka keduanya (copy dan orinya) punya referensi yang sama dengan isi array
+
+      // concat(): bikin array baru dengan menggabungkan dua atau lebih array. ketika
+
+      const originalArray = [1, 2, 3];
+      const copyArray = [].concat(originalArray); // digabungin disini
+
+      console.log(copyArray); // [1, 2, 3]
+      console.log(copyArray === originalArray); // false
+
+      // slice(): ketika ga make argumen samsek
+      // ini bakal mengcopy semua isi dari array orinya
+      const originalArray2 = [1, 2, 3];
+      const copyArray2 = originalArray2.slice();
+
+      console.log(copyArray2); // [1, 2, 3]
+      console.log(copyArray2 === originalArray2); // false
+
+      // ...: menyediakan cara lebih ringkas dalam pembuatan copy array, contoh
+      const originalArray3 = [1, 2, 3];
+      const copyArray3 = [...originalArray];
+
+      console.log(copyArray3); // [1, 2, 3]
+      console.log(copyArray3 === originalArray3); // false
+
+      // perlu diingat juga bahwa kita bisa memodifikasi hasil copyan nya tanpa mengubah isi orinya
+
+      const originalArray4 = [1, 2, 3];
+      const copyArray4 = [...originalArray4];
+
+      copyArray.push(4);
+      console.log(originalArray4); // [1, 2, 3]
+      console.log(copyArray4); // [1, 2, 3, 4]
+    </script>
+  </body>
+</html>

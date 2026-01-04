@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // operator ?: berguna di js, yang memudahkan mengakses properti atau memanggil method tanpa khawatir apakah ada atau tidak
+
+      const person = {
+        name: "dapin",
+        age: 20,
+      };
+      console.log(person.name); // "dapin"
+      console.log(person.age); // 20
+      console.log(person.job); // undefined
+
+      // dalam contoh ini person.job gaada maka dikasih undefined
+
+      // sekarang, katakan kita ingin mengakses properti dari sebuah objek yang tidak ada
+
+      const data = {
+        name: "dapin",
+        age: 20,
+      };
+
+      //   console.log(person.address.street); //  ini akan error
+      // dalam contoh ini person.address adalah undefined, kita tidak bisa mengakses street properti
+
+      // disinilah opsional chaining diperlukan
+
+      const user = {
+        name: "jono",
+        profile: {
+          email: "jono@gmail.com",
+          address: {
+            street: "jalan pahlawan",
+            city: "pekalongan",
+          },
+        },
+      };
+
+      console.log(user?.profile?.address?.street); // jalan pahlawan
+      console.log(user?.profile?.phone?.number); // undefined
+
+      // dengan begini kita bilang ke js untuk melanjutkan dengan menggunakan operasi jika objek (value sebelum ?) itu ada dan bukan null atau undefined
+
+      // jika value sebelum ? adalah null atau undefined, js bakal return undefined daripada lempar error
+
+      // ingat ini digunakan ketika kita tidak yakin apakah properti atau  method tuh gaada di objek
+    </script>
+  </body>
+</html>

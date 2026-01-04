@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for ... in adalah loop terbaik ketika butuh untuk loop properti di objek
+      // basic syntaxnya gini:
+      // for (variable in object){code yang akan dijalankan}
+
+      // di object biasa
+      const fruit = {
+        name: "durian",
+        color: "kuning",
+        price: 0.99,
+      };
+
+      for (const prop in fruit) {
+        console.log(fruit[prop]);
+      }
+
+      // di nested object
+      const person = {
+        name: "dapin",
+        age: 19,
+        univ: {
+          kampus: 2,
+          prodi: "teknik informatika",
+          fakultas: "komunikasi dan informatika",
+        },
+      };
+
+      for (const prop in person) {
+        console.log(person[prop]);
+      }
+
+      // klo mau loop properti univ objek, kita pake nested loop
+
+      function isObject(obj) {
+        return typeof obj === "object" && !Array.isArray(obj) && obj !== null;
+      }
+
+      for (const prop in person) {
+        if (isObject(person[prop])) {
+          // nested loop disini
+          for (const nestedprop in person[prop]) {
+            console.log(person[prop][nestedprop]);
+          }
+        } else {
+          console.log(person[prop]);
+        }
+      }
+    </script>
+  </body>
+</html>

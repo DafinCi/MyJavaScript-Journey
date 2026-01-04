@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //JSON.stringify(): object to json
+
+      const user = {
+        name: "dapin",
+        age: 19,
+        isAdmin: true,
+      };
+      const jsonString = JSON.stringify(user);
+      console.log(jsonString);
+
+      // JSON.stringify() juga bisa menerima parameter opsional yang disebut replacer, yang mana bisa sebuah fungsi maupun array, contoh:
+
+      const developer = {
+        first: "dapin",
+        handsome: true,
+        musician: true,
+        country: "Indonesia",
+      };
+
+      // result: {"dapin", "Indonesia"}
+      console.log(JSON.stringify(developer, ["first", "country"]));
+      // disiini kita bisa milih data mana aja yang bakal di jadikan string
+
+      // parameter opsional di JSON.stringify()
+
+      const developerObj = {
+        firstName: "Jessica",
+        isAwesome: true,
+        isMusician: true,
+        country: "USA",
+      };
+
+      console.log(JSON.stringify(developerObj, null, 2));
+
+      /* result
+{
+  "firstName": "Jessica",
+  "isAwesome": true,
+  "isMusician": true,
+  "country": "USA"
+}
+*/
+
+      // JSON.parse(): dari json ke object
+
+      const jsonString2 = '{"name":"John","age":30,"isAdmin":true}';
+      const userObject = JSON.parse(jsonString2);
+      console.log(userObject);
+
+      // Result:
+      // { name: 'John', age: 30, isAdmin: true }
+    </script>
+  </body>
+</html>

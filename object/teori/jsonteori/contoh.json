@@ -1,0 +1,10 @@
+{
+  "nama": "Bos",
+  "umur": 21,
+  "aktifWeb3": true,
+  "hobi": ["coding", "robotik"],
+  "alamat": {
+    "kota": "Surakarta",
+    "negara": "Indonesia"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // splice() me-return elemen yang dihapus dari array, jika tidak ada yang dihapus maka akan kosong
+      // basic sintaks = array.splice(startIndex, itemsToRemove, item1, item2)
+
+      // startindeks = mulai darimana
+      // itemsremove =  berapa elemen yang ingin dihapus
+      // item1 dst = elemen yang ingin ditambahkan
+
+      // ini untuk menghapus array
+      let fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+      let removed = fruits.splice(2, 2); // mulai dari indeks 2 dan hapus dua elemen
+
+      console.log(fruits); // ["apple", "banana", "kiwi"]
+      console.log(removed); // ["orange", "mango"]
+
+      // ini untuk menambah array
+      let colors = ["red", "green", "blue"];
+      colors.splice(1, 0, "yellow", "purple"); //  posisinya mulai dari  indeks satu
+
+      console.log(colors); // ["red", "yellow", "purple", "green", "blue"]
+
+      // kita juga bisa menghapus dan menambahkan secara bersamaan
+      let numbers = [1, 2, 3, 4, 5];
+      numbers.splice(1, 2, 6, 7, 8); // mulai dari indeks satu, hapus dua elemen, tambahin 6, 7, 8
+
+      console.log(numbers); // [1, 6, 7, 8, 4, 5]
+
+      // klo kita mau array orinya ga berubah, kita harus buat "copy"nya dulu sebelum pake splice()
+
+      let original = [1, 2, 3, 4, 5];
+      let copy = [...original]; // biar array orinya tetap ada dan ga berubah
+      copy.splice(2, 1, 6); // kita pake "copy"an nya untuk menambahkan array, dimulai dari indeks 2, hapus satu elemen, tambahin angka 6
+
+      console.log(original); // [1, 2, 3, 4, 5]
+      console.log(copy); // [1, 2, 6, 4, 5]
+
+      // salah satu  penerapan splice() adalah unntuk menghilangkan satu elemen dari array ketika kita tau indeksnya
+
+      let fruit = ["apple", "banana", "orange", "mango"];
+      let indexToRemove = fruit.indexOf("orange");
+      if (indexToRemove !== -1) {
+        fruit.splice(indexToRemove, 1);
+      }
+
+      console.log(fruit); // ["apple", "banana", "mango"]
+
+      // kita juga bisa menghapus seluruh isi array dengan splice()
+      let array = [1, 2, 2, 2, 2, 3, 3, 3, 3, , 4, 4, 5, 5, 5, 5, 5];
+      array.splice(0);
+      console.log(array);
+    </script>
+  </body>
+</html>

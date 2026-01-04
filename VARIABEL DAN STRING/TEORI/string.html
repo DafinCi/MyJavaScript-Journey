@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRING JS -- ODIN PROJECT</title>
+  </head>
+  <body>
+    <button>Press me</button>
+    <div id="greeting"></div>
+
+    <script>
+      // di js dalam penulisan string kita bisa pake tanda petik 1 atau dua, dan bacticks
+
+      // penggabungan string dalam js juga bisa pake dari ketiga itu, tapi bagi gw paling gampang pake backtiks
+      const name = "Chris";
+      const greeting = `Hello, ${name}`; // ini pake backtiks, tinggal pake dollar ama kurung kurawal, codenya jadi readable
+      console.log(greeting); // "Hello, Chris"
+
+      const button = document.querySelector("button");
+
+      function greet() {
+        const name = prompt("What is your name?");
+        const greeting = document.querySelector("#greeting");
+        greeting.textContent = `Hello ${name}, nice to see you!`;
+      }
+
+      button.addEventListener("click", greet);
+
+      const song = "Fight the Youth";
+      const score = 9;
+      const highestScore = 10;
+      const output = `I like the song ${song}. I gave it a score of ${
+        (score / highestScore) * 10
+      }%.`; // bisa melakukan berbagai ekspresi di dalam sini
+      console.log(output); // "I like the song Fight the Youth. I gave it a score of 90%."
+
+      const newline = `One day you finally knew
+      what you had to do, and began,`;
+      console.log(newline);
+
+      /*
+One day you finally knew
+what you had to do, and began,
+*/
+    </script>
+  </body>
+</html>

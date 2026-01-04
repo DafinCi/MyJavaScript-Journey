@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PERBEDAAN OPERASI ARITMATIKA DI JS --- FREECODECAMP</title>
+  </head>
+  <body>
+    <script>
+      // gabeda jauh kayak bahasa program yang lain
+
+      // What Happens When You Try to Do Calculations with Numbers and Strings?
+
+      //klo pake tambah maka tipe data nya berubah jadi string
+      const result = 5 + "10";
+
+      console.log(result); // 510
+      console.log(typeof result); // string
+
+      // klo pengurangan, perkalian, dan pembagian stringnya akan diubah otomatis jadi number
+      const subtractionResult = "10" - 5;
+      console.log(subtractionResult); // 5
+      console.log(typeof subtractionResult); // number
+
+      const multiplicationResult = "10" * 2;
+      console.log(multiplicationResult); // 20
+      console.log(typeof multiplicationResult); // number
+
+      const divisionResult = "20" / 2;
+      console.log(divisionResult); // 10
+      console.log(typeof divisionResult); // number
+
+      // klo stringnya bukan angka maka akan menjadi NaN, tapi tipe datanya ttp number
+
+      // klo dioprasikan dengan boolean maka true=1 false=0, jika oprasi string dengan boolean maka boolean akan diubah jadi string
+
+      const result1 = true + 1;
+      console.log(result1); // 2
+      console.log(typeof result1); // number
+
+      const result2 = false + 1;
+      console.log(result2); // 1
+      console.log(typeof result2); // number
+
+      const result3 = "Hello" + true;
+      console.log(result3); // "Hellotrue"
+      console.log(typeof result3); // string
+    </script>
+  </body>
+</html>

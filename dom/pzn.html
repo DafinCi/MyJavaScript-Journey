@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>belajar dom pzn</title>
+  </head>
+  <body>
+    <p id="tulisan">ini adalah tulisan dapin</p>
+
+    <ul id="menu">
+      <li id="first">first</li>
+      <li id="second">second</li>
+      <li id="third">third</li>
+    </ul>
+
+    <!-- MANIPULASI ELEMEN -->
+
+    <h1 id="title"></h1>
+    <h2 id="subjudul"></h2>
+    <script>
+      console.log(document);
+
+      //   properti document
+      console.log(document.title);
+      console.log(document.head);
+      console.log(document.body);
+
+      //   method document
+
+      let tulisan = document.getElementById("tulisan");
+      console.info(tulisan);
+
+      //   NODE properti
+      const menu = document.getElementsByName("menu");
+      console.log(menu);
+
+      const second = document.getElementById("second");
+      console.log(second);
+
+      console.log(second.textContent);
+      console.log(second.previousSibling);
+      console.log(second.nextSibling);
+
+      // NODE METHODs
+
+      //    ELEMENT, merupakan node yang berbentuk elemen, biasanya html, head, body dll
+
+      const title = document.getElementById("title");
+      title.textContent = "belajar js bersama pzn";
+      const subjudul = document.getElementById("subjudul");
+      subjudul.textContent = "belajar dom bersama pzn";
+
+      // element property
+
+      //   element method
+    </script>
+  </body>
+</html>

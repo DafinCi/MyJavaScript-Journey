@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // brainstroming sebelum lanjut ke freecodecamp
+
+      // klo mau nyalin objek bukan gini caranya
+      const a = { name: "Alpha" };
+      const b = a;
+
+      b.name = "Bravo";
+
+      console.log(a.name); // Bravo
+
+      // klo mau nyalin objek ada dua cara
+      // shallow copy: nyalin level pertama objek
+      // deep copy: nyalin sampai ke dalam dalam nya (klo objeknya bersarang)
+
+      // shallow copy
+      const c = { name: "Alpha" };
+      const d = { ...c };
+
+      d.name = "dotong";
+
+      console.log(c.name); // tetap "Alpha"
+      console.log(d.name); // dotong
+
+      const e = {
+        name: "Alpha",
+        stats: {
+          power: 90,
+        },
+      };
+
+      const f = { ...e };
+
+      f.stats.power = 200;
+
+      console.log(e.stats.power); // hasil?
+    </script>
+  </body>
+</html>

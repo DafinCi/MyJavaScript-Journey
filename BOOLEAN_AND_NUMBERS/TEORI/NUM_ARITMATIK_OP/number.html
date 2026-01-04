@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MACAM MACAM NUMBER DI JS --- FREECODECAMP</title>
+  </head>
+  <body>
+    <script>
+      // bakal infinity jika kita mencoba membagikan angka dengan 0
+      const infiniteNumber = 1 / 0;
+      console.log(infiniteNumber); // Infinity
+      console.log(typeof infiniteNumber); // number
+
+      // kadang di js hasil operasi mtk menghasilkan angka yang tidak valid
+      // ini akan menghasilkan NaN (not a number)
+      const notANumber = "hello world" * 2;
+      console.log(notANumber); // NaN
+      console.log(typeof notANumber); // tapi ini tipenya tetap number
+
+      // tapi klo stringnya bukan berisi angka maka akan NaN
+      const multiplicationResult = "abc" * 2;
+      console.log(multiplicationResult); // NaN
+      console.log(typeof multiplicationResult); // number
+
+      // klo dioprasikan dengan boolean maka true=1 false=0, jika oprasi string dengan boolean maka boolean akan diubah jadi string
+
+      const result1 = true + 1;
+      console.log(result1); // 2
+      console.log(typeof result1); // number
+
+      const result2 = false + 1;
+      console.log(result2); // 1
+      console.log(typeof result2); // number
+
+      const result3 = "Hello" + true;
+      console.log(result3); // "Hellotrue"
+      console.log(typeof result3); // string
+    </script>
+  </body>
+</html>

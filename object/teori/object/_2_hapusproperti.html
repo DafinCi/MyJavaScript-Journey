@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // delete: untuk menghapus properti di objek
+
+      const person = {
+        name: "Alice",
+        age: 30,
+        job: "Engineer",
+      };
+
+      delete person.job;
+
+      console.log(person.job); // undefined
+
+      // cara lain adalah dengan menggunakan destruksi pake rest parameter, klo pake cara ini sebenernya ga bener bener menghapus properti, tapi ini bikin objek baru tanpa beberapa properti tertentu
+
+      const person2 = {
+        name: "Bob",
+        age: 25,
+        job: "Designer",
+        city: "New York",
+      };
+
+      const { job, city, ...remainingProperties } = person2;
+
+      // { name: "Bob", age: 25 }
+      console.log(remainingProperties);
+
+      let obj = { a: 1, b: 2, c: 3 };
+      delete obj.b;
+      console.log(obj); // a: 1, c: 3
+    </script>
+  </body>
+</html>

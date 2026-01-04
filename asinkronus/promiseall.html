@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      ambilTigaData();
+      // Simulasi: Mengambil 3 jenis data secara paralel
+      async function ambilTigaData() {
+        try {
+          // 1. Definisikan 3 Promise
+          const promiseUser = new Promise((res) =>
+            setTimeout(() => res("Data Pengguna"), 3000)
+          );
+          const promiseProduk = new Promise((res) =>
+            setTimeout(() => res("Data Produk"), 1000)
+          );
+          const promiseStat = new Promise((res) =>
+            setTimeout(() => res("Data Statistik"), 2000)
+          );
+
+          console.log("Memulai 3 permintaan secara paralel...");
+          const hasil = await Promise.all([
+            promiseUser, // 3 detik
+            promiseProduk, // 1 detik
+            promiseStat, // 2 detik
+          ]);
+
+          console.log("Semua data berhasil diterima!"); // Muncul setelah 3 detik
+          console.log("Hasil gabungan:", hasil);
+          // Hasil gabungan: ["Data Pengguna", "Data Produk", "Data Statistik"]
+        } catch (error) {
+          console.error("Salah satu permintaan gagal:", error);
+        }
+      }
+    </script>
+  </body>
+</html>

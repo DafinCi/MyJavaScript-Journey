@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // split(): membagi string ke array dari subtring-subtring dan men spesifikasi dimana akan di split dari separator yang sudah diberikan
+      // klo gaada separator maka method akan mengembalikan sebuah array yang ori sebagai satu string elemen
+
+      // macam macam separator:
+      // "": empty string, split string menjadi karakter-karakter individu
+      // " ": space string, split string dimanapun ada spasi
+      // "-": dash, split string pada setiap dash
+
+      // contoh agar string jadi karakter individu
+      let str = "hello aku dapin";
+      let charArray = str.split("");
+      console.log(charArray); // ["h", "e", "l", "l", "o"]
+
+      // reverse(): untuk mereverse elemen di array
+
+      let charArray2 = ["h", "e", "l", "l", "o"];
+      charArray2.reverse();
+      console.log(charArray2); // ["o", "l", "l", "e", "h"]
+
+      // join(): kembalikan array yang udah ter reversed, jadi satu string
+      let reversedArray = ["o", "l", "l", "e", "h"];
+      let reversedString = reversedArray.join("");
+      console.log(reversedString); // "olleh"
+
+      // cara mereverse string
+      let st = "coding";
+      let reversed = st.split("").reverse().join("");
+      console.log(reversed);
+    </script>
+  </body>
+</html>

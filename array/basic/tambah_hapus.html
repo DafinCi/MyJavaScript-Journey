@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // push(): nambah satu elemen atau lebih di akhir, mengembalikan nilai length barunya
+      const fruits = ["apple", "banana"];
+      const newLength = fruits.push("orange");
+      console.log(newLength); // 3
+      console.log(fruits); // ["apple", "banana", "orange"]
+
+      // pop(): menghapus elemen terakhir dan mengembalikan elemen tsb
+      let fruits2 = ["apple", "banana", "orange"];
+      let lastFruit = fruits2.pop();
+      console.log(fruits2); // ["apple", "banana"]
+      console.log(lastFruit); // "orange"
+
+      // unshift(): nambah satu atau lebih elemen di awal array, dan mengembalikan length barunya
+      let numbers = [2, 3];
+      let newLength2 = numbers.unshift(1);
+      console.log(numbers); // [1, 2, 3]
+      console.log(newLength2); // 3
+
+      // shift(): hapus elemen pertama dari array, dan mengembalikan elemen tsb
+      let colors = ["red", "green", "blue"];
+      let firstColor = colors.shift();
+      console.log(colors); // ["green", "blue"]
+      console.log(firstColor); // "red"
+    </script>
+  </body>
+</html>

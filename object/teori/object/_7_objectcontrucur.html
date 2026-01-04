@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Object() constructur: bikin bikin objek kosong baru
+
+      // contohnya gini:
+      new Object();
+
+      // ini contoh klo gapake keyword "new"
+      const num = 42;
+      const numObj = Object(num); // Creates an object wrapper for the number
+
+      console.log(numObj);
+      console.log(typeof numObj); // "object"
+
+      // apa yang terjadi jika kita isi dengan null, undefined pada Object() constructur
+
+      const newObj = new Object(undefined);
+      console.log(newObj); // {}
+
+      // contoh studi kasus penggunaan Object() adalah ketika mengolah value yang belum diketahui tipe datanya, dan kita harus memastikan klo itu adalah sebuah object
+
+      function toObject(value) {
+        if (value === null || value === undefined) {
+          return {};
+        }
+        if (typeof value === "object") {
+          return value;
+        }
+        return Object(value); // jika kedua kondisi tidak ada yang terpenuhi
+      }
+
+      console.log(toObject(null));
+      console.log(toObject(true));
+      console.log(toObject(1, 2, 3));
+    </script>
+  </body>
+</html>

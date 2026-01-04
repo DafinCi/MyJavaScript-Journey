@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REVIEW MATERI VARIABLE & DATA TYPES DI JS --- FREECODECAMP</title>
+  </head>
+  <body>
+    <script>
+      // NUMBER: baik integer atau float
+      // STRING
+      // BOOLEAN: true || false
+      // UNDEFINED: variable yang sudah dideklarasikan tapi belum ada valuenya
+      // NULL: value kosong (belum ditentukan valuenya)
+      let kosong = null; // isinya belum ditentukan
+      // OBJECT: kumpulan dari key dengan valuenya (key-value), key adalah nama dari properti, dan value adalah isi dari properti
+      let pet = {
+        name: "bob",
+        age: 3,
+        type: "dog",
+      };
+      // SYMBOL: tipe data unik dan isinya tidak bisa diubah, biasanya digunakan untuk mengidentifikasi objek pada properti
+      // contoh: dua simbol dibuat dengan value yang sama tapi sebenernya mereka tidak sama
+      const key1 = Symbol("bobi");
+      const key2 = Symbol("bobi");
+      console.log(key1 === key2); // false
+
+      // BIGINT: ketika tipe data number angkanya kebesaran
+      const big = 12345670987643212345678123456783456789567893456767; //bigint
+
+      // VARIABLE
+
+      // LET: isi bisa diubah
+      // CONST: isi tidak bisa diubah
+
+      // PERATURAN DALAM PENAMAAN VARIABLE
+      // camelCase, gaboleh diawali dengan angka(hanya bisa diawali dengan huruf,_,$)
+      // tidak boleh ada karakter lain selain _ $
+
+      console.log(typeof null);
+
+      // cara nulis multi line comment
+
+      /*
+        hfahfa
+        dfhajhjaf
+      */
+    </script>
+  </body>
+</html>

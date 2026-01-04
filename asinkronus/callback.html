@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   console.log("1. Minta kopi dibuatkan.");
+
+      //   // Ini adalah operasi ASINKRONUS. JavaScript TIDAK akan menunggu.
+      //   setTimeout(function () {
+      //     console.log(
+      //       "3. Callback dipanggil: Kopi sudah siap! (setelah 3 detik)"
+      //     );
+      //   }, 3000); // 3000 milidetik = 3 detik
+
+      //   console.log("2. Sambil menunggu kopi, saya baca email.");
+      //   // Kode ini dijalankan SEGERA setelah setTimeout, tidak menunggu 3 detik.
+
+      //   tantangan:
+
+      // console.log("1. Minta kopi dibuatkan.");
+
+      // setTimeout(function () {
+      //   setTimeout(function () {
+      //     console.log("selesai");
+      //   });
+      //   console.log("3. Kopi sudah siap! (setelah 3 detik)");
+      // }, 3000);
+
+      // console.log("2. Sambil menunggu kopi, saya baca email.");
+      // Kode ini dijalankan SEGERA setelah setTimeout, tidak menunggu 3 detik.
+
+      // tantangan kedua!!:
+
+      console.log("1. Proses dimulai."); // Sinkronus
+
+      // --- Operasi Asinkronus 1: Membuat Kopi (3 detik) ---
+      setTimeout(function () {
+        console.log("2. Kopi sudah siap! (Setelah 3 detik)");
+
+        // --- Operasi Asinkronus 2: Menyajikan Kue (2 detik, dimulai setelah Kopi siap) ---
+        setTimeout(function () {
+          console.log("3. Kue sudah tersaji!"); // Setelah 3 + 2 = 5 detik
+          console.log("Selesai. Semua sudah siap.");
+        }, 2000); // <-- Perhatikan, delay hanya 2000ms (2 detik)
+      }, 3000); // <-- Delay 3000ms (3 detik)
+
+      console.log("4. Sementara itu, saya mengerjakan tugas lain."); // Sinkronus
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What Are Binary Logical Operators, and How Do They Work? --- FREECODECAMP
+    </title>
+  </head>
+  <body>
+    <script>
+      // and (&&): ngecek kedua isi, jika keduanya true maka akan mengembalikan nilai yang kedua
+      const result = true && "hello";
+
+      console.log(result); // hello
+
+      // klo ada yang false maka yang akan dikembalikan adalah nilai yang false
+
+      let hasil = 0 && 3;
+      console.log(hasil); // 0
+
+      // klo keduanya false maka yang akan dikembalikan adalah nilai yang pertama
+
+      hasil = false && 0;
+      console.log(hasil); // false
+
+      // logika operator AND berguna ketika kita ingin ngecek kedua kondisi dan memastikan mereka semuanya true
+
+      if (2 < 3 && 3 < 4) {
+        console.log("The if block runs");
+      } else {
+        console.log("The else block runs");
+      }
+
+      // OR operator: ngecek minimmal ada satu yang true, klo value  yang pertama true maka akan mengembalikan nilai tersebut, begitu juga sebaliknya
+
+      hasil = "benar" || false;
+      console.log(hasil); // benar
+
+      // contoh penerapannya:
+
+      let userInput; // sekarang masih undefined
+
+      if (userInput || "Guest") {
+        console.log("A user is present");
+      } else {
+        console.log("No user detected");
+      }
+
+      // NULLISH COALESCING (??)
+      // digunakan untuk membantu ketika kita ingin mengembalikan suatu value yang ketika value pertamanya tuh null atau undefined
+
+      hasil = null ?? "default";
+      console.log(hasil); // default
+
+      const userSettings = {
+        theme: null,
+        volume: 0,
+        notifications: false,
+      };
+
+      let theme = userSettings.theme ?? "light";
+      console.log(theme); // light
+    </script>
+  </body>
+</html>

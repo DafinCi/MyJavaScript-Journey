@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // kita pake metode includes(), ini akan mereturn true or false
+
+      let fruits = ["apple", "banana", "orange", "mango"];
+      console.log(fruits.includes("banana")); // true
+      console.log(fruits.includes("grape")); // false
+
+      // includes() juga bisa menerima parameter kedua untuk menentukan posisi spesifik di array untuk memulai pencarian
+
+      let numbers = [10, 20, 30, 40, 50, 30, 60];
+      console.log(numbers.includes(20, 2)); // false
+      console.log(numbers.includes(30, 4)); // true
+
+      // includes() juga membandingka tipe data dari elemen tsb, contoh
+      let mixedArray = [1, "2", 3, "4", 5];
+      console.log(mixedArray.includes(2)); // false, karena gaada tipe data number 2
+      console.log(mixedArray.includes("2")); // true, karena ada string berisi angka 2
+    </script>
+  </body>
+</html>

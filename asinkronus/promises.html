@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Contoh Promise: Cek apakah toko buka (simulasi 2 detik)
+      const janjiTokoBuka = new Promise((resolve, reject) => {
+        // Simulasi operasi asinkronus, misalnya cek server
+        setTimeout(() => {
+          const isOpen = true; // Bayangkan ini adalah hasil dari server
+
+          if (isOpen) {
+            // Jika berhasil, panggil resolve
+            resolve("Toko buka, silakan masuk!");
+          } else {
+            // Jika gagal, panggil reject
+            reject("Toko tutup, coba lagi besok.");
+          }
+        }, 2000); // Tunggu 2 detik
+      });
+
+      janjiTokoBuka
+        .then((result) => {
+          // Blok ini berjalan jika Promise sukses (status: Fulfilled)
+          console.log("SUKSES:", result); // Output: Toko buka, silakan masuk!
+          return "Saya sudah masuk toko."; // Nilai ini akan diteruskan ke then berikutnya
+        })
+        .then((result2) => {
+          // Ini adalah chaining, berjalan setelah then sebelumnya selesai
+          console.log("Aksi Lanjutan:", result2); // Output: Saya sudah masuk toko.
+        })
+        .catch((error) => {
+          // Blok ini berjalan jika Promise gagal (status: Rejected)
+          console.error("GAGAL:", error);
+        });
+
+      console.log("Memeriksa toko..."); // Ini akan dieksekusi duluan (non-blocking)
+
+      const janjiAmbilData = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          angka = Math.random();
+
+          if (angka > 0.5) {
+            resolve("Data 200 OK.");
+            console.log(`angka: ${angka}`);
+          } else {
+            reject("Data 404 NOT FOUND.");
+            console.log(`angka: ${angka}`);
+          }
+        }, 2000);
+      });
+
+      janjiAmbilData
+        .then((result) => {
+          console.log("data berhasil diakses");
+          return "data berhasil diambil";
+        })
+        .then((result2) => {
+          console.log(`aksi selanjutnya: ${result2}`);
+        })
+        .catch((error) => {
+          console.error(`gagal: ${error}`);
+        });
+
+      console.log("memeriksa data...");
+    </script>
+  </body>
+</html>

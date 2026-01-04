@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WORKING WITH STRING MODIFICATION METHODS -- FREECODECAMP</title>
+  </head>
+  <body>
+    <script>
+      // basic syntax: string.replace(searchValue, newValue);
+
+      let text = "I love JavaScript!";
+      console.log(text); // "I love JavaScript!"
+      let newText = text.replace("JavaScript", "coding");
+      console.log(newText); // "I love coding!"
+
+      // defaultnya replace hanya akan mengganti substring yang pertama kali ditemukan, jika ada 2 yang sama maka akan diganti yang pertama aja
+
+      // How Can You Repeat a String x Number of Times?
+
+      // basic sytax: string.repeat(count);
+
+      let word = "Hello!";
+      let repeatedWord = word.repeat(3); // harus angka positif, klo angkanya dessimal bakal dibulatkan kebawah
+      console.log(repeatedWord); // "Hello!Hello!Hello!"
+
+      // klo angkanya === 0 maka akan mengembalikan ""
+      let word2 = "Test";
+      console.log(word2.repeat(0)); // ""
+    </script>
+  </body>
+</html>

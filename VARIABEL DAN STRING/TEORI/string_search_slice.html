@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRING SEARCH AND SLICE METHOD --- FREECODECAMP</title>
+  </head>
+  <body>
+    <script>
+      // banyak yang bisa kita lakukan untuk string di js, mungkin ngecek mana substring yang paling terkecil atau terbesar dalam sebuah string
+
+      // contoh kasus: kita ingin ngecek apakah user memasukan input yang udah kita tentukan di program, salah satu caranya adalah menggunakan methodh includes()
+
+      // include(): digunakan untuk ngecek jika string mengandung spesifik substring, jika substring ditemukan di dalam string maka akan mengembalikan nilai true, sebaliknya maka akan mengembalikan false
+
+      // basic syntaxnya: string.includes(searchValue)
+
+      let phrase = "JavaScript is awesome!";
+      let result = phrase.includes("awesome");
+
+      console.log(result); // true
+
+      // kita bisa pake include() untuk ngecek awalan index substring
+
+      let text = "Hello, JavaScript world!";
+      let result2 = text.includes("JavaScript", 7);
+
+      console.log(result2); // true
+
+      // method include() hanya akan mengembalikan nilai true of false
+
+      // How Can You Extract a Substring from a String?
+
+      // slice() untuk mengambil substring dari string
+
+      // basic syntax: string.slice(startIndex, endIndex);
+
+      let message = "hello dapin";
+      let greeting = message.slice(0, 5);
+      console.log(greeting); // hello
+
+      // prinsipnya sama kek slicing di python
+    </script>
+  </body>
+</html>

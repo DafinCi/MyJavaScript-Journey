@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BELAJAR PERULANGAN ARRAYS</title>
+  </head>
+  <body>
+    <script>
+      //  for ... of
+      //   ngambil per elemen bukan indeks
+      let angka = [3, 6, 9, 12, 15];
+      for (let n of angka) {
+        console.log(`angka array: ${n}`);
+      }
+      //   for ... in
+      // ngambil per indeks atau key
+      for (let i in angka) {
+        console.log(`indeks: ${i} isi: ${angka[i]}`);
+      }
+      //   LATIHAN
+      let nilai = [85, 70, 95, 60, 75];
+      for (let m in nilai) {
+        if (nilai[m] >= 75) {
+          console.log(`indeks: ${m}, nilai lulus: ${nilai[m]}`);
+        }
+      }
+      //   menghitung rata rata nilai
+      let total = 0;
+      for (r of nilai) {
+        total += r;
+      }
+      let hasil = total / nilai.length;
+      console.log(`rata rata nilai: ${hasil}`);
+      //   mencari nilai tertinggi dan terendah
+      for (let t of nilai) {
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // primitiv adalah tipe data tunggal
+      // non primitiv adalah tipe data yang lebih kompleks, bisa nyimpan beberapa data sekaligus
+      // ketika kita bikin variable yang valuenya itu non primitiv, apa yang dimasukkan ke variable sebenernya adalah referensi kepada alamat dimana sebuah objek, bukan objek itu sendiri
+
+      const originalPerson = { name: "John", age: 30 };
+      const copiedPerson = originalPerson; // dengan begini variable copiedperson merujuk ke alamat originalperson
+
+      originalPerson.age = 31; // ketika properti di originalperson diganti, maka yang ada di copiedperson juga terganti
+
+      console.log(copiedPerson.age); // 31
+    </script>
+  </body>
+</html>

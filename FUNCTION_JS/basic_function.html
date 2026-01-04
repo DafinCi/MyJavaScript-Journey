@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BELAJAR BASIC FUNGSI DI JS</title>
+  </head>
+  <body>
+    <script>
+      // basic penulisan fungsi
+
+      function greet() {
+        console.log("Hello, Jessica!");
+      }
+
+      greet(); // "Hello, Jessica!"
+
+      // penulisan fungsi dengan parameter
+
+      function greet(name) {
+        console.log("Hello, " + name + "!");
+      }
+
+      greet("Alice"); // Hello, Alice!
+      greet("Nick"); // Hello, Nick!
+
+      // fungsi tuh mengembalikan nilai, jika tidak ada yang di return maka default nya adalah undefined
+      // penulisan return di fungsi js
+
+      function calculateSum(num1, num2) {
+        return num1 + num2;
+      }
+
+      console.log(calculateSum(3, 4)); // 7
+
+      //   ada juga yang namanya anonymous function
+      const sum = function (num1, num2) {
+        return num1 + num2;
+      };
+
+      console.log(sum(3, 4)); // 7
+      //   jadi fungsinya gapunya nama, tapi pake variable
+
+      // penulisan fungsi dengan parameter
+
+      function greetings(name = "Guest") {
+        console.log("Hello, " + name + "!");
+      }
+
+      greetings(); // Hello, Guest!
+      greetings("Anna"); // Hello, Anna!
+    </script>
+  </body>
+</html>

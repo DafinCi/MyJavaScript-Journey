@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const janjiAmbilData = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     angka = Math.random();
+
+      //     if (angka > 0.5) {
+      //       resolve("Data 200 OK.");
+      //       console.log(`angka: ${angka}`);
+      //     } else {
+      //       reject("Data 404 NOT FOUND.");
+      //       console.log(`angka: ${angka}`);
+      //     }
+      //   }, 3000);
+      // });
+
+      // async function jalankanPengambilanData() {
+      //   // 👈 Fungsi harus async
+      //   try {
+      //     // await akan menghentikan eksekusi di sini sampai Promise selesai.
+      //     // Jika Promise resolve, nilainya masuk ke variabel 'data'.
+      //     const data = await janjiAmbilData;
+
+      //     console.log("data berhasil diakses");
+      //     console.log(`aksi selanjutnya: ${data}`);
+
+      //     // Karena kita sudah pakai try...catch, kita tidak butuh .catch() di akhir
+      //   } catch (error) {
+      //     // Blok ini menangkap jika janjiAmbilData reject
+      //     console.error(`gagal: ${error}`);
+      //   }
+      // }
+
+      // console.log("memeriksa data..."); // Masih dieksekusi duluan
+      // jalankanPengambilanData(); // Panggil fungsi async
+
+      // console.log("1. mulai membuat kopi");
+      // const kopi = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve("kopi selesai");
+      //   }, 3000);
+      // });
+
+      // console.log("2. mulai membuat kue");
+      // const kue = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve("kue tersaji");
+      //   }, 2000);
+      // });
+
+      // async function buatKopi() {
+      //   try {
+      //     const data = await kopi;
+      //     console.log(`aksi: ${data}`);
+      //   } catch (error) {
+      //     console.error(`gagal: ${error}`);
+      //   }
+      // }
+
+      // async function sajikanKue() {
+      //   try {
+      //     const data = await kue;
+      //     console.log(`aksi: ${data}`);
+      //   } catch (error) {
+      //     console.error(`gagal: ${error}`);
+      //   }
+      // }
+
+      // async function mulaiLayanan() {
+      //   try {
+      //     const data1 = await buatKopi();
+      //     console.log("user minum kopi");
+      //     const data2 = await sajikanKue();
+      //     console.log("user makan kue");
+      //   } catch (error) {
+      //     console.error("maaf error");
+      //   }
+      // }
+
+      // mulaiLayanan();
+
+      //revisi dari gemini
+
+      // Kita TIDAK butuh console.log("1. mulai membuat kopi"); di luar fungsi,
+      // karena ini seharusnya terjadi di dalam operasi asinkronus.
+
+      // 1. Fungsi buatKopi() sekarang MENCIPTAKAN dan MENGEMBALIKAN Promise
+      // function buatKopi() {
+      //   console.log("-> ☕ Proses Membuat Kopi (3 detik) dimulai...");
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       resolve("Kopi Selesai!");
+      //     }, 3000);
+      //   });
+      // }
+
+      // // 2. Fungsi sajikanKue() sekarang MENCIPTAKAN dan MENGEMBALIKAN Promise
+      // function sajikanKue() {
+      //   console.log("-> 🍰 Proses Menyajikan Kue (2 detik) dimulai...");
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       resolve("Kue Tersaji!");
+      //     }, 2000);
+      //   });
+      // }
+
+      // // 3. Fungsi utama menggunakan await
+      // async function mulaiLayanan() {
+      //   console.log("--- Layanan Dimulai ---");
+
+      //   // AWAL TUGAS 1
+      //   // await MENEGAKKAN Urutan. Eksekusi berhenti di sini selama 3 detik.
+      //   const hasilKopi = await buatKopi();
+      //   console.log(`✅ Aksi 1 Selesai: ${hasilKopi}`); // Muncul setelah 3 detik
+
+      //   console.log("------------------------");
+      //   console.log(
+      //     "User sudah bisa Minum Kopi (operasi berikutnya bisa dimulai)"
+      //   );
+
+      //   // AWAL TUGAS 2
+      //   // Eksekusi berhenti di sini selama 2 detik.
+      //   const hasilKue = await sajikanKue();
+      //   console.log(`✅ Aksi 2 Selesai: ${hasilKue}`); // Muncul setelah 3 + 2 = 5 detik
+
+      //   console.log("--- Layanan Selesai ---");
+      // }
+
+      // mulaiLayanan();
+      // // console.log("Ini dieksekusi duluan"); // Jika ditambahkan, ini akan keluar pertama kali.
+
+      // TANTANGAN KEDUA DARI GEMINI
+      console.log("Mulai mengecek ketersediaan barang");
+
+      function cekKetersediaanBarang() {
+        return new Promise((resolve, reject) => {
+          if (Math.random() <= 0.2) {
+            reject("Barang habis");
+          } else {
+            resolve("Barang tersedia");
+          }
+        });
+      }
+
+      function prosesPembayaran(jumlah) {
+        console.log("Proses pembayaran...");
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Pembayaran berhasil untuk sejumlah ${jumlah}`);
+          }, 3000);
+        });
+      }
+
+      // Kita ganti harga di pemanggilan akhir agar sesuai tantangan asli
+      jalankanCheckout(150000);
+
+      async function jalankanCheckout(harga) {
+        console.log(`--- Memulai Checkout (Harga: Rp${harga}) ---`);
+        try {
+          // 1. Cek Ketersediaan (Cepat)
+          const hasilKetersediaan = await cekKetersediaanBarang();
+          console.log(`✅ Aksi 1 Selesai: ${hasilKetersediaan}`);
+
+          // 2. Proses Pembayaran (Hanya berjalan jika Aksi 1 sukses)
+          // Kita tidak perlu if/else di sini.
+          const hasilPembayaran = await prosesPembayaran(harga); // Menggunakan argumen 'harga'
+          console.log(`✅ Aksi 2 Selesai: ${hasilPembayaran}`);
+
+          console.log("--- CHECKOUT BERHASIL TOTAL ---");
+        } catch (error) {
+          // Menangkap error dari Promise yang reject (misalnya "Barang Habis")
+          console.error(`❌ GAGAL: ${error}`);
+        }
+      }
+    </script>
+  </body>
+</html>

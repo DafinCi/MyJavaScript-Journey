@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What Are Unary Operators, and How Do They Work? --- FREECODECAMP
+    </title>
+  </head>
+  <body>
+    <script>
+      // digunakan untuk value manipulation, ngecek kondisi sekarang, dll
+
+      // ini mengubah string ke number, jika sebelumnya udah nummber, maka gaakan berubah
+      let str = "42";
+      let strToNum = +str;
+
+      console.log(strToNum); // 42
+      console.log(typeof str); // string
+      console.log(typeof strToNum); // number
+
+      // klo unary nya minus maka angkanya jadi minus
+
+      str = "42";
+      strToNum = -str;
+      console.log(strToNum); // -42
+
+      // tanda logika "TIDAK" di presentasikan dengan tanda seru !, ini mengembalikan nilai true or false
+
+      let isOnline = true;
+      console.log(!isOnline); // false
+
+      isOnline = false;
+      console.log(!isOnline); // true
+
+      // bitwise "TIDAK" dipresentasikan dengan tide ~
+      const num = 5; // The binary for 5 is 00000101
+
+      console.log(~num); // -6
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What Is Bracket Notation, and How Do You Access Characters from a String?
+      --- FREECODECAMP
+    </title>
+  </head>
+  <body>
+    <button id="prompt-btn">Show Prompt</button>
+    <p id="output"></p>
+    <script>
+      // index string dimulai  dari 0
+      let greeting = "hello";
+      console.log(greeting[1]); // "e"
+
+      // untuk mengakses index terakhir kita pake 'length' dikurang satu
+      let halo = "hallo bre";
+      console.log(halo[halo.length - 1]); // "o"
+
+      //untuk mengakses 2 index
+      let dua = "hello bre";
+      console.log(dua[0] + dua[1]); // "he"
+
+      // How Do You Create a Newline in Strings and Escape Strings?
+
+      // pake \n
+
+      let poem =
+        "Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.";
+      console.log(poem);
+      // setiap \n akan bikin barisan baru
+
+      // menitik duakan karakter dalam string
+      // kita gabisa nulis "string "hello""
+      // tapi kita nulis:
+      let kata = 'dia berkata: "hello"';
+      console.log(kata); // dia berkata "hello"
+
+      // What Are Template Literals, and What Is String Interpolation?
+
+      // mempermudah dalam penulisan string yaitu pake backticks ``
+
+      const contoh = "dapin";
+      console.log(`hello ${contoh}`); // menjadikannya lebih mudah dibaca dan ditulis
+
+      // klo pake backtick kita gausah pake \n untuk membuat baris baru, cukup gini aja:
+
+      let poem2 = `Roses are red,
+Violets are blue,
+JavaScript is fun,
+And so are you.`;
+
+      console.log(poem2);
+
+      const song = "Bohemian Rhapsody";
+      const score = 9.5;
+      const highestScore = 10;
+      const output = `One of my favorite songs is "${song}". I rated it ${
+        (score / highestScore) * 100
+      }%.`;
+      console.log(output);
+
+      // How Can You Find the Position of a Substring in a String?
+      // "hello world"  // hello dan world adalah substring
+      // kita bisa nyari posisi suatu substring dengan menggunakan indexOf()
+      let sentence = "JavaScript is awesome!";
+      let position = sentence.indexOf("awesome!");
+      console.log(position); // 14
+
+      // klo ternyata substring tidak ditemukan, maka akan mengembalikan nilai -1
+
+      let sentence2 = "JavaScript is awesome!";
+      let position2 = sentence2.indexOf("fantastic");
+      console.log(position2); // -1
+
+      // kita juga bisa me-spesifikasi dari index berapa pencarian akan dimulai
+      let sentence3 = "JavaScript is awesome, and JavaScript is powerful!";
+      let position3 = sentence3.indexOf("JavaScript", 10);
+      console.log(position3); // 27
+
+      // What Is the prompt() Method, and How Does It Work?
+
+      // prompt() salah satu method penting dalam interaksi user dengan js, ini cara paling gampang untuk mendapatkan input dari user lewat pop up kecil
+
+      // prompt() punya dua argument:
+      // 1. pesan yang akan muncul di pop up
+      // 2. isi default
+      //    prompt(message, default);
+      // sebenernya ini ga dipake tapi hanya untuk pemahaman aja alur interaksi dengan user
+
+      const btn = document.getElementById("prompt-btn");
+      const output2 = document.getElementById("output");
+      btn.addEventListener("click", () => {
+        const userName = prompt("What is your name?", "Guest");
+        output2.textContent = "Hello, " + userName + "!";
+      });
+    </script>
+  </body>
+</html>

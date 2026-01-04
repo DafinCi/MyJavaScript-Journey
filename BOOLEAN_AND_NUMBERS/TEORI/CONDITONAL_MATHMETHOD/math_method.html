@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What Is the Math Object in JavaScript, and What Are Some Common Methods?
+      --- FREECODECAMP
+    </title>
+  </head>
+  <body>
+    <script>
+      // Math.random(): bikin angka floating-point random antara 0 sampai 1
+      // artinya mungkin saja outputnya 0 tapi ga mungkin 1
+
+      const randomNum = Math.random();
+
+      console.log(randomNum); // any number between 0 and 1 – 0 inclusive and 1 exclusive
+
+      // Math.min() dan Math.max()
+      // ngambil angka terkecil dan terbesar di suatu array
+      const smallest = Math.min(1, 5, 3, 9);
+      console.log(smallest); // 1
+
+      const largest = Math.max(1, 5, 3, 9);
+      console.log(largest); // 9
+
+      // Math.ceil: pembulatan keatas
+      console.log(Math.ceil(4.3)); // 5
+      // Math.floor: pembulatan kebawah
+      console.log(Math.floor(4.7)); // 4
+
+      // Math.round: campuran dari yang dua diatas. ini membulatkan ke yang paling dekat dengan integer
+
+      console.log(Math.round(2.3)); // 2
+      console.log(Math.round(4.5)); // 5
+      console.log(Math.round(4.8)); // 5
+
+      //    A practical application of Math.floor() and Math.random() is to generate a random number between two whole numbers. Here's the syntax for that:
+
+      const max = 10;
+      const min = 5;
+      const randomNum2 = Math.floor(Math.random() * (max - min)) + min;
+      console.log(randomNum2);
+
+      // random dari 1 sampe 20
+      const randomNumBtw1And20 = Math.floor(Math.random() * 20) + 1;
+      console.log(randomNumBtw1And20);
+
+      // Math.sqrt(): akar kuadrat
+      // Maath.cbrt(): akar pangkat 3
+
+      console.log(Math.sqrt(81)); // 9
+      console.log(Math.cbrt(27)); // 3
+
+      // Math.abs(angka) klo mau angka yang absolute
+      console.log(Math.abs(-5)); // 5
+      console.log(Math.abs(5)); // 5
+
+      // Math.pow(): ambil 2 angka, angka pertama dipangkatkan angka kedua
+      console.log(Math.pow(2, 3)); // 8
+      console.log(Math.pow(8, 2)); // 64
+    </script>
+  </body>
+</html>

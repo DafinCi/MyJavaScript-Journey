@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENGENAL SCOPE DI JS</title>
+  </head>
+  <body>
+    <script>
+      // ada yang namanya global variable (variable yang posisinya diluar function), variable ini bisa diakses dimanapun, baik di luar maupun dalam fugsi
+
+      let globalVar = "ini global var";
+
+      function printGlobalVar() {
+        console.log(globalVar);
+      }
+
+      printGlobalVar(); // outpunya bakal "ini global var"
+
+      // nah berbeda dengan local scope, ini adalah variable yang dideklarasi di dalam fungsi, dan hanya bisa diakses di fungsi tersebut
+
+      function greet() {
+        let massage = "ini scope variable";
+        console.log(massage);
+      }
+
+      greet();
+      // console.log(massage); // ini bakal error, soalnya variable 'massage' cuma ada di fungsi 'greet()'
+
+      // BLOCK: konsep blok scope dikenal menggunakan let dan const di es6, blok scope adalah bagian code yang di dalamnya ada kurung kurawal seperti if statement, for loops, atau while loops
+
+      // variable yang dideklarasikan pake let dan const di dalam blok hanya bisa diakses di dalam blok tersebut, berikut contohnya
+
+      if (true) {
+        let blockVar = "ini variable dalam block";
+        console.log(blockVar);
+      }
+
+      console.log(blockVar); // ini bakal error (blockVar tidak dikenal di luar blok)
+    </script>
+  </body>
+</html>

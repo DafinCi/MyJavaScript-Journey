@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // objek destruksi adalah fitur keren di js, kita bisa ekstrak value dari objek dan assign ke sebuah variable dengan lebih ringkas dan mudah dibaca
+
+      // contoh mengilustrasikan objek destruksi bekerja:
+
+      const person = {
+        name: "dapin",
+        age: 20,
+        city: "pekalongan",
+      };
+
+      const { name, age } = person;
+
+      console.log(name); // dapin
+      console.log(age); // 20
+
+      // kita juga bisa mengubah namnya, contoh:
+
+      let orang = {
+        name: "ipin",
+        age: 10,
+        city: "pekalongan",
+      };
+
+      let { name: personName, age: umur } = orang;
+
+      console.log(personName); // ipin
+      console.log(umur); // 10
+
+      // kita juga bisa nge set default
+
+      let orang2 = {
+        name2: "dapin",
+        age2: 20,
+        city: "pekalongan",
+      };
+
+      let { name2, age2, country = "unknown" } = orang2;
+      console.log(name2);
+      console.log(age2);
+      console.log(country); // unknown
+
+      // kita juga bisa meringkas jadi gini
+
+      let data1 = "jono";
+      let data2 = 10;
+      let contoh = { data1, data2 };
+
+      console.log(contoh); //data1: jono, data2: 10
+
+      //  cara meringkas ini juga berguna ketika kita ingin mereturn objek dari fungsi atau bikin objek dengan doble properti
+
+      function cretateProgram(name, age) {
+        return { name, age };
+      }
+
+      let contoh2 = cretateProgram("bob", 20);
+      console.log(contoh2); // name: bob, age: 20
+    </script>
+  </body>
+</html>
