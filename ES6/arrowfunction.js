@@ -1,7 +1,7 @@
-review arrow function
-_Elfarizi
+// review arrow function
+// _Elfarizi
 
-Regular function
+// Regular function
 function add(a, b) {
   return a + b;
 }
@@ -73,5 +73,4 @@ console.log(genap);
 
 // nomor 8
 export const add = (a, b) => a + b;
-export const multiply = (a, b) => a * b;
-
+export const multiply2 = (a, b) => a * b;

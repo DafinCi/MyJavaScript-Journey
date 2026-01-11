@@ -2,45 +2,107 @@
 
 // destructing di array
 
+// const numbers = [1, 2, 3, 4, 5];
+// const [satu, dua] = numbers;
+
+// console.log(satu, dua); // 1, 2
+
+// // skip value dengan koma
+// const [, , tiga] = numbers;
+// console.log(tiga);
+
+// //  DESTRUCRING DI OBJECT
+
+// const person = {
+//   name: "dapin",
+//   age: 20,
+//   uni: "UMS",
+// };
+
+// const { name, age } = person;
+// console.log(name, age);
+
+// // ganti nama variable
+
+// const { name: nickname } = person;
+// console.log(nickname);
+
+// // nested destructing
+
+// const user = {
+//   id: 1,
+//   age: 21,
+//   profile: {
+//     name2: "fizi",
+//     uni2: "UMS",
+//     bach: "Teknik Informatika",
+//   },
+// };
+
+// const {
+//   profile: { name2, uni2 },
+// } = user;
+
+// console.log(name2, uni2);
+
+// konten
+
+// _elfarizi - Destructing
+
+// Basic example
+
 const numbers = [1, 2, 3, 4, 5];
-const [satu, dua] = numbers;
+const [first, second] = numbers;
+console.log(first, second); // 1 2
 
-console.log(satu, dua); // 1, 2
+// Skipping values
 
-// skip value dengan koma
-const [, , tiga] = numbers;
-console.log(tiga);
+const [, , third] = numbers;
+console.log(third); // 3
+// Use commas to skip elements you don’t need
 
-//  DESTRUCRING DI OBJECT
+// _elfarizi - Object Destructing
+
+// Basic example
 
 const person = {
-  name: "dapin",
-  age: 20,
-  uni: "UMS",
+  name: "Elfarizi",
+  age: 18,
+  university: "Elfarizi University",
 };
-
 const { name, age } = person;
-console.log(name, age);
+console.log(name, age); // elfarizi 18
 
-// ganti nama variable
+// Renaming Variables
 
 const { name: nickname } = person;
-console.log(nickname);
+console.log(nickname); // Elfarizi
 
-// nested destructing
+// _elfarizi - Nested Object Destructuring
+// Common in API responses and React props
 
 const user = {
   id: 1,
-  age: 21,
+  age: 18,
   profile: {
-    name2: "fizi",
-    uni2: "UMS",
-    bach: "Teknik Informatika",
+    fullName: "Jhon",
+    university: "Elfarizi University",
+    major: "Computer Science",
   },
 };
 
 const {
-  profile: { name2, uni2 },
+  profile: { fullName, university },
 } = user;
 
-console.log(name2, uni2);
+console.log(fullName, university); // Jhon Elfarizi Universtity
+
+/*
+ * Key Takeaway
+
+  if you often write: 
+    user.profile.fullName
+    user.profile.university
+
+  You should be using destructing
+ */
