@@ -48,3 +48,13 @@ console.log(person4.age);
 
 person3.eat2();
 person4.eat2();
+
+Array.prototype.last = function () {
+  if (this.length === 0) {
+    return -1;
+  }
+  return this[this.length - 1];
+};
+
+const a = new Array([1, 2, 3]);
+a.last();
