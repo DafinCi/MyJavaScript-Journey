@@ -14,3 +14,5 @@ const age = 20;
 const email = "dotcom";
 
 export { name, age, email };
+
+// kita juga bisa export array
