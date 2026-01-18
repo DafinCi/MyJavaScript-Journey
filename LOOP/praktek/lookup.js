@@ -26,10 +26,16 @@ let contacts = [
 ];
 
 function lookUpProfile(name, property) {
-  for (let i of contacts) {
-    if (i.firstName === name) {
-    } else {
-      return "No Such Profile";
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+      if (property in contacts[i]) {
+        return contacts[i][property];
+      } else {
+        return "No such property";
+      }
     }
   }
+  return "No such contact";
 }
+
+console.log(lookUpProfile("Kristia", "lastName"));
